@@ -1,0 +1,17 @@
+/* styles/links.css */
+a.link {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 178, 122, 0.35);
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+a.link:hover {
+  color: var(--paper);
+  border-bottom-color: rgba(200, 178, 122, 0.7);
+}
+
+a.link:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-bottom-color: transparent;
+}

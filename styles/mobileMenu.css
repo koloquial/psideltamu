@@ -1,0 +1,131 @@
+/* styles/mobileMenu.css */
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(0, 0, 0, 0.72);
+  /* darker */
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  animation: menuFadeIn var(--dur) var(--ease) forwards;
+}
+
+.menu-panel {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  left: 12px;
+  z-index: 90;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(244, 245, 247, 0.14);
+
+  /* darker + more opaque for readability */
+  background: rgba(7, 8, 12, 1);
+
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+
+  transform: translateY(-10px);
+  opacity: 0;
+  animation: menuDropIn 220ms var(--ease) forwards;
+}
+
+/* Keep it from getting too tall */
+.menu-body {
+  padding: 12px 14px 14px;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+}
+
+/* If you want it to feel like a “stone slab” */
+.menu-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(900px 500px at 20% 0%,
+      rgba(244, 245, 247, 0.08),
+      rgba(244, 245, 247, 0.00) 58%);
+}
+
+.menu-head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid rgba(244, 245, 247, 0.10);
+}
+
+.menu-title {
+  font-size: 12px;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.menu-links {
+  position: relative;
+  display: grid;
+  gap: 10px;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  text-decoration: none;
+  padding: 12px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(244, 245, 247, 0.10);
+  background: rgba(244, 245, 247, 0.03);
+  color: var(--paper);
+
+  transition: transform var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+
+.menu-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(200, 178, 122, 0.35);
+  background: rgba(244, 245, 247, 0.045);
+}
+
+.menu-sub {
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+.menu-actions {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+@keyframes menuFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes menuDropIn {
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 861px) {
+
+  .menu-backdrop,
+  .menu-panel {
+    display: none;
+  }
+}

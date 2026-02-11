@@ -1,0 +1,59 @@
+/* styles/palette.css */
+:root {
+  /* Core */
+  --ink: #0b0d12;
+  /* near-black */
+  --night: #0f1624;
+  /* deep navy */
+  --slate: #1c2633;
+  /* slate gray */
+  --slate-2: #2a3646;
+  /* lighter slate */
+  --paper: #f4f5f7;
+  /* near-white */
+  --chalk: #d6d9df;
+  /* soft gray */
+
+  /* Luxury accent (subtle “brass” without being loud) */
+  --gilt: #c8b27a;
+  --gilt-2: #a89260;
+
+  /* Semantic */
+  --bg: var(--ink);
+  --surface: rgba(244, 245, 247, 0.04);
+  --surface-2: rgba(244, 245, 247, 0.06);
+  --border: rgba(244, 245, 247, 0.12);
+  --border-2: rgba(244, 245, 247, 0.18);
+
+  --text: rgba(244, 245, 247, 0.92);
+  --muted: rgba(244, 245, 247, 0.68);
+  --subtle: rgba(244, 245, 247, 0.52);
+
+  --focus: rgba(200, 178, 122, 0.55);
+  --danger: #d56565;
+  --success: #6fd39c;
+
+  /* Radii / shadows */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 18px 60px rgba(0, 0, 0, 0.38);
+
+  /* Spacing */
+  --container: 1120px;
+  --pad: 24px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --dur: 160ms;
+
+  /* “Stone” vibe: soft noise + gentle highlight */
+  --stone-sheen: radial-gradient(1200px 600px at 20% -10%,
+      rgba(244, 245, 247, 0.08),
+      rgba(244, 245, 247, 0.00) 55%);
+  --stone-depth: radial-gradient(900px 500px at 110% 10%,
+      rgba(15, 22, 36, 0.55),
+      rgba(11, 13, 18, 0.0) 60%);
+}

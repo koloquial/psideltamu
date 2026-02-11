@@ -1,13 +1,17 @@
-export const metadata = {
-  title: "ψδμ",
-  description: "psi delta mu | Nicholas Kolodziej",
-};
+import "@/styles/index.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { AuthProvider } from "@/components/AuthProvider";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <AuthProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
